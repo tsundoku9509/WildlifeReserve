@@ -4,5 +4,5 @@
 .classpath
 .project
 .settings/
-META-INF/
-
+/src/main/java/META-INF/
+pom.xml
