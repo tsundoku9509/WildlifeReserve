@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WildLife Reserve</title>
+</head>
+<body>
+	<h1>Welcome to the Wildlife Reserve!</h1>
+	<h2>Please enter the Animal you want to visit below!</h2>
+	<form action="addAnimalServlet" method="post">
+		Animal Type: <input type="text" name="animalType">
+		Habitat: <input type="text" name="habitat">
+		Tracking Number: <input type="text" name="trackingNum">
+		<input type="submit" value="Add Animal">
+	</form><br/>
+	
+	<a href="viewAllAnimalsServlet">View the complete animal list</a>
+</body>
+</html>

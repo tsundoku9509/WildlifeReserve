@@ -1,0 +1,8 @@
+/bin/
+/target/
+.DS_Store
+.classpath
+.project
+.settings/
+/src/main/java/META-INF/
+pom.xml
