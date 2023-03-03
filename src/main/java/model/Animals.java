@@ -17,6 +17,8 @@ import javax.persistence.Table;
 public class Animals {
 	@Id
 	@GeneratedValue
+	@Column(name="ANIMALID")
+	private int id;
 	@Column(name="ANIMAL")
 	private String animalType;
 	@Column(name="HABITAT")
@@ -42,6 +44,15 @@ public class Animals {
 		super();
 		this.animalType = type;
 		this.habitat = habitat;
+	}
+	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getAnimalType() {
@@ -84,7 +95,7 @@ public class Animals {
 	
 	@Override
 	public String toString() {
-		return "Animals [animalType=" + animalType + ", habitat=" + habitat + ", trackingNum=" + trackingNum + "]";
-	}
+		return "Animals [Id=" + id + ", animalType=" + animalType + ", habitat=" + habitat + ", trackingNum=" + trackingNum + "]";
 	
+	}
 }
