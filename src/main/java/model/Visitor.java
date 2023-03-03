@@ -17,6 +17,7 @@ import javax.persistence.Table;
 public class Visitor {
 	@Id
 	@GeneratedValue
+	private int id;
 	@Column(name="NAME")
 	private String guestName;
 	@Column(name="NUMBER_OF_PARTY")
@@ -31,13 +32,28 @@ public class Visitor {
 	public Visitor() {
 		super();
 	}
-	public Visitor(String name, int numGuests, String exp, double cost) {
+	public Visitor(int id, String name, int numGuests, String exp, double cost) {
 		super();
+		this.id = id;
 		this.guestName = name;
 		this.numOfGuests = numGuests;
 		this.purchasedExp = exp;
 		this.cost = cost;
 	}
+	
+	public Visitor(String name) {
+		super();
+		this.guestName = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getGuestName() {
 		return guestName;
 	}
@@ -85,7 +101,7 @@ public class Visitor {
 	}
 	@Override
 	public String toString() {
-		return "Visitor [guestName=" + guestName + ", numOfGuests=" + numOfGuests + ", purchasedExp=" + purchasedExp
+		return "Visitor [id=" + id + ",guestName=" + guestName + ", numOfGuests=" + numOfGuests + ", purchasedExp=" + purchasedExp
 				+ ", cost=" + cost + "]";
 	}
 	
