@@ -1,5 +1,6 @@
 package model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,9 +19,9 @@ public class Visitor {
 	@GeneratedValue
 	@Column(name="NAME")
 	private String guestName;
-	@Column(name="NUMBER OF PARTY")
+	@Column(name="NUMBER_OF_PARTY")
 	private int numOfGuests;
-	@Column(name="EXPERIENCE TYPE")
+	@Column(name="EXPERIENCE_TYPE")
 	private String purchasedExp;
 	@Column(name="COST")
 	private double cost;
@@ -82,4 +83,11 @@ public class Visitor {
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
+	@Override
+	public String toString() {
+		return "Visitor [guestName=" + guestName + ", numOfGuests=" + numOfGuests + ", purchasedExp=" + purchasedExp
+				+ ", cost=" + cost + "]";
+	}
+	
+	
 }

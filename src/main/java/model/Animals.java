@@ -21,7 +21,7 @@ public class Animals {
 	private String animalType;
 	@Column(name="HABITAT")
 	private String habitat;
-	@Column(name="TRACKING NUMBER")
+	@Column(name="TRACKING_NUMBER")
 	private int trackingNum;
 	/**
 	 * @return the animalType
@@ -37,6 +37,13 @@ public class Animals {
 		this.habitat = habitat;
 		this.trackingNum = track;
 	}
+	
+	public Animals(String type, String habitat) {
+		super();
+		this.animalType = type;
+		this.habitat = habitat;
+	}
+
 	public String getAnimalType() {
 		return animalType;
 	}
@@ -69,6 +76,15 @@ public class Animals {
 	 */
 	public void setTrackingNum(int trackingNum) {
 		this.trackingNum = trackingNum;
+	}
+	
+	public String returnAnimalDetails() {
+		return this.animalType + ": " + this.habitat + ": " + this.trackingNum;
+	}
+	
+	@Override
+	public String toString() {
+		return "Animals [animalType=" + animalType + ", habitat=" + habitat + ", trackingNum=" + trackingNum + "]";
 	}
 	
 }
