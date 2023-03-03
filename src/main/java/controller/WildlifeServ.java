@@ -33,7 +33,7 @@ public class WildlifeServ extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String wildlife = request.getParameter("wildlife");
-		Visitor animal = new Visitor(wildlife, 0, wildlife, 0);
+		Visitor animal = new Visitor(0, wildlife, 0, wildlife, 0);
 		PrintWriter writer = response.getWriter();
 		writer.println("Your visitor info is: " + animal.toString());
 		writer.close();
