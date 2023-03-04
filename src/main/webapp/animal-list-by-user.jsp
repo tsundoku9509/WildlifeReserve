@@ -8,6 +8,7 @@
 <title>Wildlife Lists</title>
 </head>
 <body>
+<h1>Current Visitor List's On File</h1>
 <form method="post" action="listnavigationServlet">
 <table>
 <c:forEach items="${requestScope.allLists}" var = "currentAnimal">
