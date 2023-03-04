@@ -26,7 +26,7 @@ public class VisitorListDetails {
 	private LocalDate tripDate;
 	@ManyToOne(cascade=CascadeType.PERSIST)
 	private Visitor visitor;
-	@OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 	@JoinTable
 	private List<Animals> listOfAnimals;
 	

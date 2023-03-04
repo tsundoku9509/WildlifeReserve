@@ -9,7 +9,9 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import model.Visitor;
 
@@ -29,4 +31,28 @@ public class VisitorHelper {
 		List<Visitor> allVisitors = em.createQuery("SELECT v FROM Visitor v").getResultList();
 		return allVisitors;
 	}
+	
+	public Visitor findVisitor(String nameToLookUp) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<Visitor> typedQuery = em.createQuery("SELECT vi FROM Visitor vi WHERE vi.guestName = :selectedName",Visitor.class);
+		
+		typedQuery.setParameter("selectedName", nameToLookUp);
+		typedQuery.setMaxResults(1);
+		
+		Visitor foundVisitor;
+		try {
+			foundVisitor = typedQuery.getSingleResult();
+		}catch(NoResultException ex) {
+			foundVisitor = new Visitor(nameToLookUp);
+		}
+		em.close();
+		return foundVisitor;
+	}
+	
+	
+	
+	
+	
+	
 }
